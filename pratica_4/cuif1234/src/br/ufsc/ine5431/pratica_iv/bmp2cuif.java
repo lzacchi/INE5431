@@ -6,7 +6,7 @@
  * Exemplo de uso: java bmp2cuif --version 1 lena.bmp lena.cuif
  *
  */
-package br.ufsc.ine5431.praticaiv;
+package br.ufsc.ine5431.pratica_iv;
 
 public class bmp2cuif {
 

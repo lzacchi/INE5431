@@ -1,4 +1,4 @@
-package br.ufsc.ine5431.praticaiv;
+package br.ufsc.ine5431.pratica_iv;
 import java.lang.*;
 
 public final class PSNR {
@@ -33,9 +33,9 @@ public final class PSNR {
 		 /* TODO
 	    	 * Implemente o cálculo do PSNR
 	    	 */
-	    	return mse(original,decodificado);	    
+	    	return mse(original,decodificado);
 	  }
-	 
+
 	 private static double mse(int[][][] original, int[][][] decodificado)  {
 		 /* TODO
 		  * Implemente aqui o cálculo do MSE. Dica: não esqueça de aplicar o cast (double) e divisões de números inteiros
@@ -47,10 +47,10 @@ public final class PSNR {
 				 for (int p=0;p<3;p++) {  //percorre componentes R, G e B
 					 System.out.println("Original Componente [" +p+ "] em [" +i+","+j+"]:"+original[i][j][p]);
 					 System.out.println("Decodificado Componente ["+p+"] em ["+i+","+j+"]:"+decodificado[i][j][p]);
-				 } 
+				 }
 			 }
-		 } 
-		 return 1;	 
+		 }
+		 return 1;
 	}
 
 }

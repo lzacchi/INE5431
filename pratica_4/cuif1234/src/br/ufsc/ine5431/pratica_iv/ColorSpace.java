@@ -1,4 +1,4 @@
-package br.ufsc.ine5431.praticaiv;
+package br.ufsc.ine5431.pratica_iv;
 
 public class ColorSpace {
 
@@ -11,21 +11,21 @@ public class ColorSpace {
 	{
 		return (int)(value*255);
 	}
-	
-	public static double[] rgb_to_ycbcr_base_double(double r, double g, double b) {   
+
+	public static double[] rgb_to_ycbcr_base_double(double r, double g, double b) {
 
 		double ycbcr[] = new double[3];
 		ycbcr[0] = r;
 		ycbcr[1] = g;
 		ycbcr[2] = b;
-		
-		/** 
+
+		/**
 			TODO!
 			Modifiquem o código acima para fazer a conversão corretamente!
-			PS: sugiro que não se basear na conversão inversa que está otimizada... 
+			PS: sugiro que não se basear na conversão inversa que está otimizada...
 			Sigam a especificação do documento BT.601
 		**/
-		
+
 		return ycbcr;
 	}
 
@@ -57,7 +57,7 @@ public class ColorSpace {
 	    double b_double = rgb_int_to_double(b);
 
 	   	double[] ycbcr_double = rgb_to_ycbcr_base_double(r_double, g_double, b_double);
-	   	
+
 	   	int[] ycbcr_int = new int[3];
 
 	    ycbcr_int[0] = ycbcr_y_double_to_int(ycbcr_double[0]);
@@ -84,7 +84,7 @@ public class ColorSpace {
 		return rgb_corrected;
 	}
 
-	public static double[] ycbcr_to_rgb_base_double(double kb, double kr, double y, double cb, double cr) { 
+	public static double[] ycbcr_to_rgb_base_double(double kb, double kr, double y, double cb, double cr) {
 		double[] rgb = new double[3];
 	    rgb[2] = cb*2*(1.0-kb)+y; // b
 
@@ -95,7 +95,7 @@ public class ColorSpace {
 	    return ycbcr_to_rgb_check_and_correct_ranges(rgb);
 	}
 
-	public static int[] ycbcr_to_rgb_base(	double kb, double kr, int y, int cb, int cr) 
+	public static int[] ycbcr_to_rgb_base(	double kb, double kr, int y, int cb, int cr)
 	{
 	    double y_double = ycbcr_y_int_to_double(y);
 		double cb_double = ycbcr_chroma_int_to_double(cb);
@@ -107,7 +107,7 @@ public class ColorSpace {
 	    rgb[0] = rgb_double_to_int(rgb_double[0]);
 	    rgb[1] = rgb_double_to_int(rgb_double[1]);
 	    rgb[2] = rgb_double_to_int(rgb_double[2]);
-	    
+
 	    return rgb;
 	}
 
