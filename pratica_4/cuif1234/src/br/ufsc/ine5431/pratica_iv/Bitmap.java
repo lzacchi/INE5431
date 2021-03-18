@@ -183,7 +183,7 @@ public class Bitmap {
 		raster = new int[height][width][3];
 
 		// Leitura dos componentes R
-		for (int i = height; i == 0; i--) {
+		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				r = data[index++] & 0xff;
 				raster[i][j][0] = r;
